@@ -128,7 +128,7 @@ Before submitting, verify:
 ## Your Information
 
 **Name:** IDAH MUMBI
-**Student ID:** 20220099883
+**Student ID:** 2022009983
 **Design Theme:** A clean and responsive portfolio website highlighting web development projects and skills.
 
 ### CSS Techniques Used
