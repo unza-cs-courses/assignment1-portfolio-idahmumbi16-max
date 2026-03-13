@@ -127,22 +127,22 @@ Before submitting, verify:
 
 ## Your Information
 
-**Name:** [Your Name]
-**Student ID:** [Your Student ID]
-**Design Theme:** [Describe your portfolio theme/style]
+**Name:** IDAH MUMBI
+**Student ID:** 20220099883
+**Design Theme:** A clean and responsive portfolio website highlighting web development projects and skills.
 
 ### CSS Techniques Used
 - [ ] CSS Custom Properties
 - [ ] Flexbox
 - [ ] CSS Grid
 - [ ] Media Queries
-- [ ] Other: _______________
+- [ ] Other: None
 
 ### Challenges & Solutions
-[Describe any challenges you faced and how you solved them]
+One challenge I faced was making the websit responsive across different screen sizes. At first, the layout looked good on desktop byt did not adjust properly on the smaller devices. I solved this by using  mobile-first approach and adding media queries at 768px and 1024px to adjust the layout using CSS GRid and Flexbox. Another challenge was organising the project cards so they aligned properly, which I fixed by using CSS Grid with responsive columns.
 
 ### Credits
-[List any images, fonts, or resources used with attribution]
+Profile image and project screenshots are personal images created for this assignment. Development tools used include Visual Studio Code, GitHub, and Google Chrome Developer Tools.
 
 ---
 
