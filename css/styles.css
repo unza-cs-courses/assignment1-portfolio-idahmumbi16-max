@@ -21,38 +21,38 @@ DO NOT use CSS frameworks (Bootstrap, Tailwind, etc.)
    ============================================================ */
 :root {
     /* Colors - TODO: Customize your color palette */
-    --color-primary: /* Your primary color */;
-    --color-primary-dark: /* Darker shade */;
-    --color-secondary: /* Secondary color */;
-    --color-text: /* Main text color */;
-    --color-text-light: /* Lighter text */;
-    --color-background: /* Page background */;
-    --color-background-alt: /* Alternate background */;
-    --color-border: /* Border color */;
+    --color-primary: #2563eb;
+    --color-primary-dark: #1e40af;
+    --color-secondary: #374151;
+    --color-text: #1f2937;
+    --color-text-light: #6b7280;
+    --color-background: #f9fafb;
+    --color-background-alt: #ffffff;
+    --color-border: #e5e7eb;
 
     /* Typography - TODO: Define your font sizes */
-    --font-family: /* Your font stack */;
-    --font-size-base: /* Base size, e.g., 16px */;
-    --font-size-sm: /* Small text */;
-    --font-size-lg: /* Large text */;
-    --font-size-xl: /* Extra large */;
-    --font-size-2xl: /* Headings */;
-    --font-size-3xl: /* Large headings */;
+    --font-family: Arial, Helvetica, sans-serif;
+    --font-size-base: 16px;
+    --font-size-sm: 14px;
+    --font-size-lg: 20px;
+    --font-size-xl: 24px;
+    --font-size-2xl: 32px;
+    --font-size-3xl: 40px;
 
     /* Spacing - TODO: Define spacing scale */
-    --spacing-xs: /* Extra small */;
-    --spacing-sm: /* Small */;
-    --spacing-md: /* Medium */;
-    --spacing-lg: /* Large */;
-    --spacing-xl: /* Extra large */;
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 32px;
+    --spacing-xl: 64px;
 
     /* Layout */
-    --max-width: /* Container max-width */;
-    --border-radius: /* Default border radius */;
+    --max-width: 1100px;
+    --border-radius: 8px;
 
     /* Transitions */
-    --transition-fast: /* Fast transition */;
-    --transition-normal: /* Normal transition */;
+    --transition-fast: 0.2s;
+    --transition-normal: 0.3s;
 }
 
 /* ============================================================
@@ -63,30 +63,45 @@ DO NOT use CSS frameworks (Bootstrap, Tailwind, etc.)
 *::before,
 *::after {
     /* TODO: box-sizing, margin, padding reset */
+box-sizing: border-box;
+margin: 0;
+padding: 0;
 }
 
 html {
     /* TODO: scroll-behavior, font-size */
+scroll-behavior: smooth;
+font-size: var(--font-size-base);
 }
 
 body {
     /* TODO: font-family, color, background-color, line-height */
+font-family: var(--font-family);
+line-height: 1.6;
+background: var(--color-background);
+color: var(--color-text);
 }
 
 img {
     /* TODO: Make images responsive */
+max-width: 100%;
+display: block;
 }
 
 a {
     /* TODO: Link styles */
+text-decoration: none;
+color: var(--color-primary);
 }
 
 a:hover {
     /* TODO: Link hover state */
+color: var(--color-primary-dark);
 }
 
 ul {
     /* TODO: List reset */
+list-style: none;
 }
 
 /* ============================================================
@@ -100,6 +115,10 @@ ul {
      * - margin: 0 auto
      * - padding
      */
+width: 100%;
+max-width: var(--max-width);
+margin: 0 auto;
+padding: var(--spacing-md);
 }
 
 /* ============================================================
@@ -114,26 +133,43 @@ ul {
      * - text-align, cursor
      * - transition
      */
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-base);
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition-normal);
 }
 
 .btn--primary {
     /* TODO: Primary button (filled) */
+background: var(--color-primary);
+color: white;
 }
 
 .btn--primary:hover {
     /* TODO: Primary button hover */
+    background: var(--color-primary-dark);
 }
 
 .btn--outline {
     /* TODO: Outline button (bordered) */
+border: 2px solid var(--color-primary);
+color: var(--color-primary);
 }
 
 .btn--outline:hover {
     /* TODO: Outline button hover */
+background: var(--color-primary);
+color: white;
 }
 
 .btn--small {
     /* TODO: Small button variant */
+padding: 6px 12px;
+font-size: var(--font-size-sm);
 }
 
 /* ============================================================
@@ -147,6 +183,11 @@ ul {
 .header {
     /* TODO: Style the header
        Consider: position, background, padding, box-shadow, z-index */
+background: white;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+position: sticky;
+top: 0;
+z-index: 100;
 }
 
 .nav {
@@ -155,24 +196,36 @@ ul {
      * - justify-content: space-between
      * - align-items: center
      */
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: var(--spacing-md);
 }
 
 .nav__logo a {
     /* TODO: Logo styles */
+font-size: var(--font-size-lg);
+font-weight: bold;
+color: var(--color-primary);
 }
 
 .nav__menu {
     /* TODO: Style navigation menu
        Mobile: Stack vertically or hide
        Desktop: Horizontal with Flexbox */
+display: flex;
+gap: var(--spacing-md);
 }
 
 .nav__menu a {
     /* TODO: Navigation link styles */
+color: var(--color-text);
+font-weight: 500;
 }
 
 .nav__menu a:hover {
     /* TODO: Navigation link hover */
+color: var(--color-primary);
 }
 
 /* ============================================================
@@ -183,14 +236,26 @@ ul {
     /* TODO: Style hero section
        Consider: min-height, background, centering content
        Use Flexbox for centering */
+min-height: 60vh;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+background: linear-gradient(135deg, #2563eb, #1e40af);
+color: white;
+padding: var(--spacing-xl) var(--spacing-md);
 }
 
 .hero__content h1 {
     /* TODO: Style your name */
+font-size: var(--font-size-3xl);
+margin-bottom: var(--spacing-md);
 }
 
 .hero__tagline {
     /* TODO: Style tagline */
+font-size: var(--font-size-lg);
+margin-bottom: var(--spacing-lg);
 }
 
 /* ============================================================
@@ -199,37 +264,58 @@ ul {
    ============================================================ */
 .about {
     /* TODO: Section padding */
+padding: var(--spacing-xl) 0;
 }
 
 .about h2 {
     /* TODO: Section heading */
+text-align: center;
+margin-bottom: var(--spacing-lg);
 }
 
 .about__content {
     /* TODO: Use CSS Grid or Flexbox for layout
        Mobile: Stack image above text
        Desktop: Side by side */
+display: grid;
+gap: var(--spacing-lg);
 }
 
 .about__image img {
     /* TODO: Style profile image */
+border-radius: 50%;
+max-width: 200px;
+margin: auto;
 }
 
 .about__text p {
     /* TODO: Paragraph styles */
+margin-bottom: var(--spacing-md);
 }
 
 .about__text h3 {
     /* TODO: Subheading styles */
+font-size: var(--font-size-xl);
+margin-top: var(--spacing-md);
+margin-bottom: var(--spacing-sm);
+color: var(--color-primary);
 }
 
 .skills-list {
     /* TODO: Style skills list
        Consider: Flexbox, tags/badges style */
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
 }
 
 .skills-list li {
     /* TODO: Individual skill badge */
+background: var(--color-primary);
+color: white;
+padding: 6px 12px;
+border-radius: 20px;
+font-size: var(--font-size-sm);
 }
 
 /* ============================================================
@@ -238,10 +324,14 @@ ul {
    ============================================================ */
 .projects {
     /* TODO: Section styling */
+background: var(--color-background-alt);
+padding: var(--spacing-xl) 0;
 }
 
 .projects h2 {
     /* TODO: Section heading */
+text-align: center;
+margin-bottom: var(--spacing-lg);
 }
 
 .projects__grid {
@@ -249,6 +339,9 @@ ul {
        Mobile: 1 column
        Tablet: 2 columns
        Desktop: 3 columns */
+display: grid;
+grid-template-columns: 1fr;
+gap: var(--spacing-lg);
 }
 
 .project-card {
@@ -256,30 +349,47 @@ ul {
      * - background, border-radius, overflow
      * - box-shadow, transition
      */
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: var(--transition-normal);
 }
 
 .project-card:hover {
     /* TODO: Card hover effect */
+    transform: translateY(-5px);
 }
 
 .project-card img {
     /* TODO: Project image */
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
 }
 
 .project-card__content {
     /* TODO: Card content area */
+    padding: var(--spacing-lg);
 }
 
 .project-card__content h3 {
     /* TODO: Project title */
+    margin-bottom: var(--spacing-sm);
+
 }
 
 .project-card__content p {
     /* TODO: Project description */
+    color: var(--color-text-light);
+    font-size: var(--font-size-sm);
 }
 
 .project-card__links {
     /* TODO: Links container (Flexbox) */
+    margin-top: var(--spacing-md);
+    display: flex;
+    gap: var(--spacing-sm);
 }
 
 /* ============================================================
@@ -288,23 +398,37 @@ ul {
    ============================================================ */
 .contact {
     /* TODO: Section styling */
+    padding: var(--spacing-xl) 0;
 }
 
 .contact h2 {
     /* TODO: Section heading */
+    font-size: var(--font-size-2xl);
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-primary);
 }
 
 .contact__form {
     /* TODO: Style contact form
        Consider: max-width, centering */
+       max-width: 600px;
+       margin: var(--spacing-lg) auto 0;
+       display: flex;
+       flex-direction: column;
 }
 
 .form-group {
     /* TODO: Form group spacing */
+    margin-bottom: var(--spacing-md);
 }
 
 .form-group label {
     /* TODO: Label styles */
+    display: block;
+    margin-bottom: var(--spacing-sm);
+    font-weight: 600;
+    color: var(--color-text);
 }
 
 .form-group input,
@@ -315,15 +439,28 @@ ul {
      * - font-family, font-size
      * - transition
      */
+     width: 100%;
+     padding: var(--spacing-sm);
+     border: 1px solid var(--color-border);
+     border-radius: var(--border-radius);
+     font-family: var(--font-family);
+     font-size: var(--font-size-base);
+     transition: var(--transition-normal);
+     background-color: white;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     /* TODO: Focus state */
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
 }
 
 .form-group textarea {
     /* TODO: Textarea specific styles */
+    resize: vertical;
+    min-height: 120px;
 }
 
 /* ============================================================
@@ -335,22 +472,37 @@ ul {
      * - background, color, padding
      * - text-align
      */
+    background-color: var(--color-text);
+    color: white;
+    padding: var(--spacing-lg);
+    text-align: center;
 }
 
 .footer .container {
     /* TODO: Footer layout (Flexbox) */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
 }
 
 .footer__social {
     /* TODO: Social links container */
+    display: flex;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-sm);
 }
 
 .footer__social a {
     /* TODO: Social link styles */
+     color: white;
+    font-weight: 500;
+    transition: var(--transition-fast);
 }
 
 .footer__social a:hover {
     /* TODO: Social link hover */
+    color: var(--color-secondary);
 }
 
 /* ============================================================
@@ -367,6 +519,13 @@ ul {
        - Adjust typography sizes
        - Change layouts (Grid columns, Flexbox directions)
        - Adjust spacing */
+       .about__content {
+            grid-template-columns: 1fr 2fr;
+            align-items: center;
+       }
+       .projects__grid {
+            grid-template-columns: repeat(2, 1fr);
+       }
 }
 
 /* Desktop (1024px and up) */
@@ -375,11 +534,20 @@ ul {
        - Further layout adjustments
        - Larger typography
        - More spacing */
+       .hero__content h1 {
+        font-size: 48px;
+       }
+       .projects__grid {
+        grid-template-columns: repeat(3, 1fr);
+       }
 }
 
 /* Large Desktop (1200px and up) */
 @media (min-width: 1200px) {
     /* TODO: Add large desktop styles (optional) */
+    .container {
+        padding: var(--spacing-xl);
+    }
 }
 
 /* ============================================================
